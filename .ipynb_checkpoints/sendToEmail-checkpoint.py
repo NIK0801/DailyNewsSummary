@@ -75,5 +75,5 @@ def attach_file(msg, filepath):                             # Функция п�
 now = datetime.datetime.now()
 date = str(now.strftime("%d-%m-%Y"))    
 looking_for_certain_news(vector1, vector2)    
-files = ["db/NewsMediaParse"+date+".xlsx"]    
+files = ["db/NewsMediaParse"+date+".html"]    
 send_email("barcafan0801@gmail.com", "Выборка новостей", "сводка", files)
