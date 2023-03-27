@@ -1,4 +1,3 @@
-#!/home/nikitos/DailyNewsSummary/venv/bin/python
 import smtplib                                              # Импортируем библиотеку по работе с SMTP
 import os                                                   # Функции для работы с операционной системой, не зависящие от используемой операционной системы
 import datetime
@@ -14,11 +13,11 @@ from parseEconomNews import looking_for_certain_news
 from config import vector1, vector2
 
 def send_email(addr_to, msg_subj, msg_text, files):
-    addr_from = "otdeleniyenb.rme@mail.ru"                         # Отправитель
-    password  = "6UUu6N0mfzvNbXZvvBdv"                                  # Пароль
+    addr_from = "ВВОДИМ АДРЕС ПОЧТЫ, С КОТОРОГО БУДУТ ПРИХОДИТЬ ВЫБОРКИ НОВОСТЕЙ"                         # Отправитель
+    password  = "ПАРОЛЬ !!!НЕ ЯВНЫЙ!!!!! ГУГЛИТЬ ПРО ПАРОЛИ ДЛЯ СТОРОННИХ ПРИЛОЖЕНИЙ И В МАЙЛ И В ГУГЛ ПОЧТЕ ТАКОЕ ЕСТЬ"                                  # Пароль
 
     msg = MIMEMultipart()                                   # Создаем сообщение
-    msg['From']    = "otdeleniyenb.rme@mail.ru"                              # Адресат
+    msg['From']    = "ВВОДИМ АДРЕС ПОЧТЫ, С КОТОРОГО БУДУТ ПРИХОДИТЬ ВЫБОРКИ НОВОСТЕЙ"                              # Адресат
     msg['To']      =  addr_to                             # Получатель
     msg['Subject'] =  msg_subj                              # Тема сообщения
 
@@ -75,5 +74,5 @@ def attach_file(msg, filepath):                             # Функция п�
 now = datetime.datetime.now()
 date = str(now.strftime("%d-%m-%Y"))    
 looking_for_certain_news(vector1, vector2)    
-files = ["db/NewsMediaParse"+date+".html"]    
-send_email("barcafan0801@gmail.com", "Выборка новостей", "сводка", files)
+files = ["db/NewsMediaParse"+date+".html"]    # ПУТЬ И НАЗВАНИЕ ФАЙЛА С ВЫБОРКОЙ
+send_email("АДРЕС ПОЧТЫ ПОЛУЧАТЕЛЯ ВЫБОРКИ", "Выборка новостей", "сводка", files)
